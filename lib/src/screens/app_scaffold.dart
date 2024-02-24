@@ -23,7 +23,7 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber,
-        title: const Text('❤️初めての Flutter アプリ❤️'),
+        title: const Text('❤️ 初めての Flutter ❤️'),
       ),
       body: child,
       bottomNavigationBar: BottomNavigationBar(

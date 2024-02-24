@@ -15,13 +15,13 @@ class _LibraryState extends State<Library> {
     final Favorite favorite = context.watch<Favorite>();
 
     return Column(
-      children: favorite.favorites.map((pair) {
+      children: favorite.favorites.map((bird) {
         return ListTile(
-          title: Text(pair.asLowerCase),
+          title: Text(bird.name),
           trailing: IconButton(
             icon: const Icon(Icons.delete),
             onPressed: () async {
-              await favorite.remove(pair);
+              await favorite.remove(bird);
               setState(() {});
             },
           ),
