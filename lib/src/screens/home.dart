@@ -5,6 +5,7 @@ import 'package:test_drive/src/widgets/change_button.dart';
 import 'package:test_drive/src/widgets/favorite_button.dart';
 import 'package:test_drive/src/repositories/bird.dart' as bird_repository;
 import 'package:test_drive/src/models/bird.dart' as bird_model;
+import 'package:test_drive/src/widgets/home/player.dart';
 
 class Home extends StatefulWidget {
   const Home({
@@ -37,10 +38,10 @@ class _HomeState extends State<Home> {
               if (!snapshot.hasData) {
                 return Text('Error: ${snapshot.error}');
               }
-              return BirdListContainer(
-                  birds: snapshot.data!,
-                  current: snapshot.data!.first,
-                  currentIndex: 0);
+              return const Player(
+                url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+                title: 'バードウォッチング！！',
+              );
             },
           ),
         ],
