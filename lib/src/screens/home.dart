@@ -21,28 +21,14 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final bird_repository.Bird birdRepository = bird_repository.Bird();
 
-    return Center(
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          FutureBuilder<List<bird_model.Bird>>(
-            future: birdRepository.fetchAll(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const CircularProgressIndicator();
-              }
-              if (snapshot.hasError) {
-                return Text('Error: ${snapshot.error}');
-              }
-              if (!snapshot.hasData) {
-                return Text('Error: ${snapshot.error}');
-              }
-              return const Player(
-                url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
-                title: 'バードウォッチング！！',
-              );
-            },
+          Player(
+            url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+            title: 'バードウォッチング！！',
           ),
         ],
       ),
